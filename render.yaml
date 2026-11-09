@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: pdf-form-bangla
+    runtime: node
+    plan: free
+    buildCommand: npm install && npx puppeteer browsers install chrome
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
