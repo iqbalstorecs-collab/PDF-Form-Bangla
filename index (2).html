@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>সদস্য নিবন্ধন ফর্ম</title>
+  <link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="sheet">
+    <header class="masthead">
+      <img id="logoPreview" src="/images/logo.svg" alt="সংগঠনের লোগো" class="logo">
+      <div>
+        <h1>সদস্য নিবন্ধন ফর্ম</h1>
+        <p>তথ্য পূরণ করে নিচের বাটনে চাপ দিন, ফর্মটি পিডিএফ হিসেবে নেমে আসবে।</p>
+      </div>
+    </header>
+
+    <form id="memberForm" novalidate>
+      <fieldset>
+        <legend>সংগঠনের তথ্য</legend>
+
+        <div class="field">
+          <label for="orgName">সংগঠনের নাম</label>
+          <input id="orgName" name="orgName" type="text" maxlength="120" required value="আদর্শ সমাজকল্যাণ সংঘ">
+        </div>
+        <div class="field">
+          <label for="orgAddress">সংগঠনের ঠিকানা</label>
+          <input id="orgAddress" name="orgAddress" type="text" maxlength="250" required value="গ্রাম: উদাহরণপুর, ডাকঘর: নমুনা, জেলা: চট্টগ্রাম">
+        </div>
+        <div class="field">
+          <label for="logoInput">সংগঠনের লোগো <small>(ঐচ্ছিক)</small></label>
+          <input id="logoInput" type="file" accept="image/png,image/jpeg,image/webp">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>সদস্যের তথ্য</legend>
+
+        <div class="photo-row">
+          <img id="photoPreview" src="/images/member.svg" alt="সদস্যের ছবি" class="photo">
+          <div class="field grow">
+            <label for="photoInput">সদস্যের ছবি</label>
+            <input id="photoInput" type="file" accept="image/png,image/jpeg,image/webp">
+            <small>JPG, PNG বা WebP। ছবি নিজে থেকে ছোট করে নেওয়া হবে।</small>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="name">সদস্যের নাম</label>
+          <input id="name" name="name" type="text" maxlength="100" required autocomplete="name">
+        </div>
+        <div class="grid">
+          <div class="field">
+            <label for="fatherName">পিতার নাম</label>
+            <input id="fatherName" name="fatherName" type="text" maxlength="100" required>
+          </div>
+          <div class="field">
+            <label for="motherName">মাতার নাম</label>
+            <input id="motherName" name="motherName" type="text" maxlength="100" required>
+          </div>
+          <div class="field">
+            <label for="memberId">সদস্য আইডি</label>
+            <input id="memberId" name="memberId" type="text" maxlength="30" required>
+          </div>
+          <div class="field">
+            <label for="mobile">মোবাইল নম্বর</label>
+            <input id="mobile" name="mobile" type="tel" inputmode="tel" maxlength="20" required autocomplete="tel" placeholder="01XXXXXXXXX">
+          </div>
+          <div class="field">
+            <label for="dob">জন্মতারিখ</label>
+            <input id="dob" name="dob" type="date" required>
+          </div>
+          <div class="field">
+            <label for="joinDate">সদস্য হওয়ার তারিখ</label>
+            <input id="joinDate" name="joinDate" type="date" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="presentAddress">বর্তমান ঠিকানা</label>
+          <textarea id="presentAddress" name="presentAddress" rows="2" maxlength="250" required></textarea>
+        </div>
+        <label class="check">
+          <input id="sameAddress" type="checkbox">
+          <span>স্থায়ী ঠিকানা বর্তমান ঠিকানার মতোই</span>
+        </label>
+        <div class="field">
+          <label for="permanentAddress">স্থায়ী ঠিকানা</label>
+          <textarea id="permanentAddress" name="permanentAddress" rows="2" maxlength="250" required></textarea>
+        </div>
+      </fieldset>
+
+      <p class="sign-note">সভাপতি ও সম্পাদকের স্বাক্ষরের জায়গা পিডিএফে নিজে থেকেই থাকবে।</p>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <button id="downloadBtn" type="submit" class="download">পিডিএফ ডাউনলোড করুন</button>
+    </form>
+  </main>
+  <script src="/script.js"></script>
+</body>
+</html>
